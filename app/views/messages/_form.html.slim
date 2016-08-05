@@ -1,0 +1,14 @@
+= simple_form_for(message) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user
+    
+  .form-inputs
+    = f.association :chatroom, as: :hidden, input_html: { value: chatroom.id }
+    
+  .form-inputs
+    = f.input :content, as: :text
+
+  .form-actions
+    = f.button :submit

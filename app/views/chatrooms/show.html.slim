@@ -1,0 +1,16 @@
+p#notice = notice
+
+h1 = @chatroom.name
+
+- if @chatroom.messages.any?
+  #messages
+    = render partial: 'messages/message', collection: @chatroom.messages
+- else
+  #messages.hidden
+    ' No have messages
+    
+= render partial: 'messages/form', locals: { message: @message, chatroom: @chatroom }
+
+= link_to 'Edit', edit_chatroom_path(@chatroom)
+'|
+= link_to 'Back', chatrooms_path

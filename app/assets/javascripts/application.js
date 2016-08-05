@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require cable
 //= require jquery
 //= require jquery_ujs
-
+//= require_tree ./channels
 //= require_tree .
+
+this.App = {};
+App.cable = ActionCable.createConsumer()
